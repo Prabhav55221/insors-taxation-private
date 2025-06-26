@@ -266,21 +266,21 @@ Examples:
     parser.add_argument(
         '-o', '--output',
         type=str,
-        default='/Users/prabhavsingh/Documents/Insors/insors-pricing/PRICING/outputs',
+        default='/Users/prabhavsingh/Documents/Insors/insors-taxation-private/PRICING/outputs',
         help='Output JSON file path (default: {pdf_name}_extraction.json)'
     )
     
     parser.add_argument(
         '--system-prompt',
         type=str,
-        default='/Users/prabhavsingh/Documents/Insors/insors-pricing/PRICING/prompts/system_prompt.md',
+        default='/Users/prabhavsingh/Documents/Insors/insors-taxation-private/PRICING/prompts/system_prompt.md',
         help='Path to system prompt file (default: prompts/system_prompt.md)'
     )
     
     parser.add_argument(
         '--user-prompt', 
         type=str,
-        default='/Users/prabhavsingh/Documents/Insors/insors-pricing/PRICING/prompts/user_prompt.md',
+        default='/Users/prabhavsingh/Documents/Insors/insors-taxation-private/PRICING/prompts/user_prompt.md',
         help='Path to user prompt file (default: prompts/user_prompt.md)'
     )
     
