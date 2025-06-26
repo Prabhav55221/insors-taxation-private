@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  pricing-api:
+    build: 
+      context: ./PRICING
+      dockerfile: Dockerfile
+    container_name: pricing-extraction-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=5433
+      - DB_NAME=insors_db
+      - DB_USER=insors_demo
+      - DB_PASSWORD=p@ssW0rd!
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./PRICING/outputs:/app/outputs

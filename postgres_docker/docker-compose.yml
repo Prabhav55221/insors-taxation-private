@@ -1,0 +1,24 @@
+# /Users/prabhavsingh/Documents/Insors/insors-taxation-private/docker/docker-compose.yml
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: insors_postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"  # Changed to port 5433
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=p@ssW0rd!
+      - POSTGRES_USER=insors_demo
+      - POSTGRES_DB=insors_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U insors_demo -d insors_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

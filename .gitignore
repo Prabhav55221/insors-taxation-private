@@ -197,3 +197,4 @@ cython_debug/
 
 # PRICING
 PRICING/outputs/
+dumps/
