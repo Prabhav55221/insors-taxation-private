@@ -20,13 +20,13 @@ class Config:
     
     @property
     def system_prompt_path(self) -> str:
-        default_path = self.app_root / 'prompts' / 'system_prompt.md'
-        return os.getenv('SYSTEM_PROMPT_PATH', str(default_path))
-    
+        default_path = '/app/prompts/system_prompt.md'
+        return os.getenv('SYSTEM_PROMPT_PATH', default_path)
+
     @property
     def user_prompt_path(self) -> str:
-        default_path = self.app_root / 'prompts' / 'user_prompt.md'
-        return os.getenv('USER_PROMPT_PATH', str(default_path))
+        default_path = '/app/prompts/user_prompt.md'
+        return os.getenv('USER_PROMPT_PATH', default_path)
     
     @property
     def default_output_dir(self) -> str:
@@ -35,7 +35,7 @@ class Config:
     
     @property
     def db_host(self) -> str:
-        return os.getenv('DB_HOST', 'localhost')
+        return os.getenv('DB_HOST', 'host.docker.internal')
     
     @property
     def db_port(self) -> int:
